@@ -21,6 +21,56 @@ a {
     color: var(--primary);
 }
 
+.btn {
+    height: 48px;
+    border-radius: 48px;
+    min-width: 155px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    -webkit-border-radius: 48px;
+    -moz-border-radius: 48px;
+    -ms-border-radius: 48px;
+    -o-border-radius: 48px;
+    font-weight: 600;
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -ms-transition: var(--transition);
+    -o-transition: var(--transition);
+    font-family: var(--body-font);
+
+    cursor: pointer;
+}
+
+button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.btn-primary {
+    border: 1px solid #cdcdcd70;
+
+    &:hover {
+        border: 1px solid var(--primary);
+    }
+}
+
+.btn-secondary {
+    background: var(--primary);
+    color: var(--primary);
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #0a3cce;
+    font-size: 17px;
+    padding: 1.7rem 3rem;
+}
+
+// main style start from here
+
+
 .wrapper {
     position: relative;
     overflow: hidden;
@@ -91,29 +141,36 @@ a {
         height: 100%;
         object-fit: cover;
     }
-}
 
-.book_now {
-    border: 1px solid #cdcdcd70;
-    height: 48px;
-    border-radius: 48px;
-    min-width: 155px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: .5rem;
-    -webkit-border-radius: 48px;
-    -moz-border-radius: 48px;
-    -ms-border-radius: 48px;
-    -o-border-radius: 48px;
-    font-weight: 600;
-    transition: var(--transition);
-    -webkit-transition: var(--transition);
-    -moz-transition: var(--transition);
-    -ms-transition: var(--transition);
-    -o-transition: var(--transition);
+    h1 {
+        font-size: 115px;
+        font-weight: 320;
+        line-height: 1;
+        color: var(--primary);
+        letter-spacing: .4px;
+    }
 
-    &:hover {
-        border: 1px solid var(--primary);
+    .banner_txt {
+        position: absolute;
+        bottom: 8%;
+        left: 10%;        
+
+        p {
+            color: var(--primary);
+            font-size: 24px;
+            line-height: 1.5;
+            margin-top: 2.4rem;
+        }
+
+        .btm_txt {
+            width: 90%;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .btn{
+                margin: 50px 0 0 0px;
+            }
+        }
     }
 }
