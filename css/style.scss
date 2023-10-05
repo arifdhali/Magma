@@ -16,9 +16,28 @@
     --transition: all .3s;
 }
 
+body {
+    font-family: var(--body-font);
+    color: var(--primary);
+}
+
+.uni_padding {
+    padding: 200px 0;
+}
+
+::selection {
+    background: #000;
+    color: var(--primary);
+}
+
 a {
     text-decoration: none;
     color: var(--primary);
+}
+
+.container {
+    width: min(98%, 1580px);
+    margin: auto;
 }
 
 .btn {
@@ -143,7 +162,7 @@ button {
     }
 
     h1 {
-        font-size: 115px;
+        font-size: clamp(50px, 9.5vw, 115px);
         font-weight: 320;
         line-height: 1;
         color: var(--primary);
@@ -153,7 +172,7 @@ button {
     .banner_txt {
         position: absolute;
         bottom: 8%;
-        left: 10%;        
+        left: 10%;
 
         p {
             color: var(--primary);
@@ -168,9 +187,38 @@ button {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            .btn{
-                margin: 50px 0 0 0px;
+
+            .btn {
+                margin: 90px 0 0 20px;
+
+                &:hover {
+                    background: #000;
+                    color: #fff;
+                }
             }
         }
+    }
+}
+
+.page2 {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background: #0a3cce;
+
+
+    p {
+        color: var(--primary);
+        font: 400 clamp(18px, 1.8vw, 22px) var(--body-font);
+        padding-bottom: 2rem;
+    }
+
+    h3 {
+        font: 300 clamp(40px, 6.6vw, 80px)/1.2 var(--body-font);
+        letter-spacing: -5px;
+        span {
+            opacity: .5;
+        }
+
     }
 }

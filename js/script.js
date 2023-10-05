@@ -28,3 +28,24 @@ ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
 ScrollTrigger.refresh();
 
+
+// gsap
+
+let clutter = '';
+document.querySelector(".para_ani").textContent.split(' ').forEach((det) => {
+    clutter += `<span> ${det} </span>`;
+    document.querySelector(".para_ani").innerHTML = clutter;
+})
+
+gsap.to(".para_ani span", {
+    scrollTrigger: {
+        trigger: ".para_ani span",
+        scroller: ".wrapper",
+        start: "top bottom",
+        end: "bottom top",
+        markers: true,
+        scrub: .5,
+    },
+    stagger:.2,
+    opacity: 1,
+});

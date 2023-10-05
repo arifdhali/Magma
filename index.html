@@ -13,7 +13,8 @@
 <body>
 
     <div class="wrapper">
-        <div class="banner" data-scroll data-scroll-spedd="-5">
+        <!-- banner -->
+        <div class="banner" data-scroll data-scroll-speed="-5">
             <nav>
                 <img src="assets/logo.png" alt="" class="logo">
                 <div class="right">
@@ -24,6 +25,7 @@
                     <i class="ri-menu-3-line"></i>
                 </div>
             </nav>
+            <!-- banner -->
             <div class="banner_txt">
                 <h1>Experience Real <br> Estate Agility</h1>
                 <div class="btm_txt">
@@ -33,8 +35,20 @@
                     <button class="btn btn-secondary">Learn more</button>
                 </div>
             </div>
+
             <video src="assets/1.mp4" autoplay loop muted playsinline></video>
         </div>
+        <!-- page 2 -->
+        <div class="page2 uni_padding">
+            <div class="container">
+                <p>CERTIFY YOUR BUILDING AS A DIGITAL TWIN TOKEN (DTT®)
+                </p>
+                <h3 class="para_ani">The Digital Twin Token is a unique digital asset backed by property data. Magma combines your
+                    building’s components and systems essential information into a DTT®.
+                </h3>
+            </div>
+        </div>
+
 
 
 
@@ -45,4 +59,14 @@
     <script src="js/script.js"></script>
 </body>
 
-</html>
+</html>gsap.to(".page2 > .para_ani > span", {
+    scrollTrigger: {
+        trigger: ".page2 > .para_ani > span",
+        scroller: ".wrapper",
+        start: "top bottom",
+        end: "bottom top",
+        markers: true,
+        scrub: true,
+    },
+    opacity: 0, // This will animate the opacity from 1 to 0
+});
