@@ -49,24 +49,8 @@ gsap.to(".para_ani span", {
     stagger: .2,
 });
 
-
-// page 3 
-function canvas() {
-    const canvas = document.querySelector("canvas");
-    const context = canvas.getContext("2d");
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-
-    window.addEventListener("resize", function () {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        render();
-    });
-
-    function files(index) {
-        var data = `
+let i = [
+    `
     ./assets/page3/bridges00004.png
     ./assets/page3/bridges00007.png
     ./assets/page3/bridges00010.png
@@ -121,6 +105,27 @@ function canvas() {
     ./assets/page3/bridges00157.png
     ./assets/page3/bridges00160.png
     ./assets/page3/bridges00163.png
+       `
+]
+
+// page 3 
+function canvas() {
+
+    const canvas = document.querySelector("canvas");
+    const context = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+
+    window.addEventListener("resize", function () {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        render();
+    });
+
+    function files(index) {
+        var data = `
     ./assets/page3/frames00007.png
     ./assets/page3/frames00010.png
     ./assets/page3/frames00013.png
@@ -186,14 +191,12 @@ function canvas() {
     ./assets/page3/frames00193.png
     ./assets/page3/frames00196.png
     ./assets/page3/frames00199.png
-    ./assets/page3/frames00202.png    
-    
-
+    ./assets/page3/frames00202.png  
  `;
         return data.split("\n")[index];
     }
 
-    const frameCount = 67;
+    const frameCount = 63;
 
     const images = [];
     const imageSeq = {
@@ -209,17 +212,16 @@ function canvas() {
     gsap.to(imageSeq, {
         frame: frameCount - 1,
         snap: "frame",
-        ease: "Power0.easeNone",
+        ease: `none`,
         scrollTrigger: {
             scrub: 0.15,
-            trigger: `.page3`,
+            trigger: `.page3 canvas`,
             //   set start end according to preference
             start: `top top`,
-            end: `200% 90%`,
+            end: `300% top`,
             scroller: `.wrapper`,
         },
         onUpdate: render,
-        stagger: 1,
     });
 
     images[1].onload = render;
@@ -249,14 +251,14 @@ function canvas() {
         );
     }
     ScrollTrigger.create({
-        ease: "Power0.easeNone",
-        trigger: ".page3",
-        pin: true,
-        markers: true,
-        scroller: `.wrapper`,
-        start: `top top`,
-        end: `200%  90%`,
-    });
-}
 
+        trigger: '.page3',
+        pin: true,
+        markers:true,
+        scroller: `.wrapper`,        
+        start: `top top`,
+        end: `300% top`,
+    });
+
+}
 canvas();
