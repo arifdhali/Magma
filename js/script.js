@@ -31,87 +31,32 @@ ScrollTrigger.refresh();
 
 // gsap
 
-let clutter = '';
-document.querySelector(".para_ani").textContent.split(' ').forEach((det) => {
-    clutter += `<span> ${det} </span>`;
-    document.querySelector(".para_ani").innerHTML = clutter;
-})
+function textAni() {
+    let clutter = '';
+    document.querySelector(".page2 h3").textContent.split(' ').forEach((det) => {
+        clutter += `<span> ${det} </span>`;
+        document.querySelector(".page2 h3").innerHTML = clutter;
+    })
 
-gsap.to(".para_ani span", {
-    scrollTrigger: {
-        trigger: ".para_ani span",
-        scroller: ".wrapper",
-        start: "top 98%",
-        end: "bottom top",
-        scrub: .5,
-    },
-    opacity: 1,
-    stagger: .2,
-});
+    gsap.to(".para_ani span", {
+        scrollTrigger: {
+            trigger: ".page2 h3",
+            scroller: ".wrapper",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: .5,
+        },
+        color: '#fff',
+        stagger: .1,
+    });
+}
+textAni();
 
-let i = [
-    `
-    ./assets/page3/bridges00004.png
-    ./assets/page3/bridges00007.png
-    ./assets/page3/bridges00010.png
-    ./assets/page3/bridges00013.png
-    ./assets/page3/bridges00016.png
-    ./assets/page3/bridges00019.png
-    ./assets/page3/bridges00022.png
-    ./assets/page3/bridges00025.png
-    ./assets/page3/bridges00028.png
-    ./assets/page3/bridges00031.png
-    ./assets/page3/bridges00034.png
-    ./assets/page3/bridges00037.png
-    ./assets/page3/bridges00040.png
-    ./assets/page3/bridges00043.png
-    ./assets/page3/bridges00046.png
-    ./assets/page3/bridges00049.png
-    ./assets/page3/bridges00052.png
-    ./assets/page3/bridges00055.png
-    ./assets/page3/bridges00058.png
-    ./assets/page3/bridges00061.png
-    ./assets/page3/bridges00064.png
-    ./assets/page3/bridges00067.png
-    ./assets/page3/bridges00070.png
-    ./assets/page3/bridges00073.png
-    ./assets/page3/bridges00076.png
-    ./assets/page3/bridges00079.png
-    ./assets/page3/bridges00082.png
-    ./assets/page3/bridges00085.png
-    ./assets/page3/bridges00088.png
-    ./assets/page3/bridges00091.png
-    ./assets/page3/bridges00094.png
-    ./assets/page3/bridges00097.png
-    ./assets/page3/bridges00100.png
-    ./assets/page3/bridges00103.png
-    ./assets/page3/bridges00106.png
-    ./assets/page3/bridges00109.png
-    ./assets/page3/bridges00112.png
-    ./assets/page3/bridges00115.png
-    ./assets/page3/bridges00118.png
-    ./assets/page3/bridges00121.png
-    ./assets/page3/bridges00124.png
-    ./assets/page3/bridges00127.png
-    ./assets/page3/bridges00130.png
-    ./assets/page3/bridges00133.png
-    ./assets/page3/bridges00136.png
-    ./assets/page3/bridges00139.png
-    ./assets/page3/bridges00142.png
-    ./assets/page3/bridges00145.png
-    ./assets/page3/bridges00148.png
-    ./assets/page3/bridges00151.png
-    ./assets/page3/bridges00154.png
-    ./assets/page3/bridges00157.png
-    ./assets/page3/bridges00160.png
-    ./assets/page3/bridges00163.png
-       `
-]
 
 // page 3 
 function canvas() {
 
-    const canvas = document.querySelector("canvas");
+    const canvas = document.querySelector(".page3 canvas");
     const context = canvas.getContext("2d");
 
     canvas.width = window.innerWidth;
@@ -196,7 +141,7 @@ function canvas() {
         return data.split("\n")[index];
     }
 
-    const frameCount = 63;
+    const frameCount = 66;
 
     const images = [];
     const imageSeq = {
@@ -217,12 +162,15 @@ function canvas() {
             scrub: 0.15,
             trigger: `.page3 canvas`,
             //   set start end according to preference
-            start: `top top`,
-            end: `300% top`,
+            start: `bottom bottom`,
+            end: `250% top`,
             scroller: `.wrapper`,
+
         },
         onUpdate: render,
+
     });
+
 
     images[1].onload = render;
 
@@ -254,11 +202,177 @@ function canvas() {
 
         trigger: '.page3',
         pin: true,
-        markers:true,
-        scroller: `.wrapper`,        
-        start: `top top`,
-        end: `300% top`,
+        scroller: `.wrapper`,
+        start: `bottom bottom`,
+        end: `250% top`,
+
     });
 
 }
 canvas();
+
+function textAni2() {
+    let clutter = '';
+    document.querySelector(".page4 h3").textContent.split(' ').forEach((det) => {
+        clutter += `<span> ${det} </span>`;
+        document.querySelector(".page4 h3").innerHTML = clutter;
+    })
+
+    gsap.to(".para_ani span", {
+        scrollTrigger: {
+            trigger: ".page4 h3",
+            scroller: ".wrapper",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: .5,
+        },
+        color: '#fff',
+        stagger: .1,
+    });
+}
+textAni2();
+
+function canvas2() {
+
+    const canvas = document.querySelector(".page5 canvas");
+    const context = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+
+    window.addEventListener("resize", function () {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        render();
+    });
+
+    function files(index) {
+        var data = `
+    ./assets/page3/bridges00007.png
+    ./assets/page3/bridges00010.png
+    ./assets/page3/bridges00013.png
+    ./assets/page3/bridges00016.png
+    ./assets/page3/bridges00019.png
+    ./assets/page3/bridges00022.png
+    ./assets/page3/bridges00025.png
+    ./assets/page3/bridges00028.png
+    ./assets/page3/bridges00031.png
+    ./assets/page3/bridges00034.png
+    ./assets/page3/bridges00037.png
+    ./assets/page3/bridges00040.png
+    ./assets/page3/bridges00043.png
+    ./assets/page3/bridges00046.png
+    ./assets/page3/bridges00049.png
+    ./assets/page3/bridges00052.png
+    ./assets/page3/bridges00055.png
+    ./assets/page3/bridges00058.png
+    ./assets/page3/bridges00061.png
+    ./assets/page3/bridges00064.png
+    ./assets/page3/bridges00067.png
+    ./assets/page3/bridges00070.png
+    ./assets/page3/bridges00073.png
+    ./assets/page3/bridges00076.png
+    ./assets/page3/bridges00079.png
+    ./assets/page3/bridges00082.png
+    ./assets/page3/bridges00085.png
+    ./assets/page3/bridges00088.png
+    ./assets/page3/bridges00091.png
+    ./assets/page3/bridges00094.png
+    ./assets/page3/bridges00097.png
+    ./assets/page3/bridges00100.png
+    ./assets/page3/bridges00103.png
+    ./assets/page3/bridges00106.png
+    ./assets/page3/bridges00109.png
+    ./assets/page3/bridges00112.png
+    ./assets/page3/bridges00115.png
+    ./assets/page3/bridges00118.png
+    ./assets/page3/bridges00121.png
+    ./assets/page3/bridges00124.png
+    ./assets/page3/bridges00127.png
+    ./assets/page3/bridges00130.png
+    ./assets/page3/bridges00133.png
+    ./assets/page3/bridges00136.png
+    ./assets/page3/bridges00139.png
+    ./assets/page3/bridges00142.png
+    ./assets/page3/bridges00145.png
+    ./assets/page3/bridges00148.png
+    ./assets/page3/bridges00151.png
+    ./assets/page3/bridges00154.png
+    ./assets/page3/bridges00157.png
+    ./assets/page3/bridges00160.png
+    ./assets/page3/bridges00163.png
+    
+ `;
+        return data.split("\n")[index];
+    }
+
+    const frameCount = 53;
+
+    const images = [];
+    const imageSeq = {
+        frame: 1,
+    };
+
+    for (let i = 0; i < frameCount; i++) {
+        const img = new Image();
+        img.src = files(i);
+        images.push(img);
+    }
+
+    gsap.to(imageSeq, {
+        frame: frameCount - 1,
+        snap: "frame",
+        ease: `none`,
+        scrollTrigger: {
+            scrub: 0.15,
+            trigger: `.page5 canvas`,
+            //   set start end according to preference
+            start: `bottom bottom`,
+            end: `250% top`,
+            scroller: `.wrapper`,
+
+        },
+        onUpdate: render,
+
+    });
+
+
+    images[1].onload = render;
+
+    function render() {
+        scaleImage(images[imageSeq.frame], context);
+    }
+
+    function scaleImage(img, ctx) {
+        var canvas = ctx.canvas;
+        var hRatio = canvas.width / img.width;
+        var vRatio = canvas.height / img.height;
+        var ratio = Math.max(hRatio, vRatio);
+        var centerShift_x = (canvas.width - img.width * ratio) / 2;
+        var centerShift_y = (canvas.height - img.height * ratio) / 2;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(
+            img,
+            0,
+            0,
+            img.width,
+            img.height,
+            centerShift_x,
+            centerShift_y,
+            img.width * ratio,
+            img.height * ratio
+        );
+    }
+    ScrollTrigger.create({
+
+        trigger: '.page5',
+        pin: true,
+        scroller: `.wrapper`,
+        start: `bottom bottom`,
+        end: `250% top`,
+
+    });
+
+}
+canvas2();
